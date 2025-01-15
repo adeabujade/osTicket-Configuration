@@ -29,7 +29,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
    
     b. For Region choose (US) East US 2
 
-   c. Press Review + Create and then create again
+    c. Press Review + Create and then create again
 
 2. Deploy a Windows 10 Virtual Machine (VM):
 
@@ -99,13 +99,15 @@ a.Create a new directory on the C: drive: C:\PHP.
 2.Install PHP:
 
 3.From the osTicket-Installation-Files folder, unzip php-7.3.8-nts-Win32-VC15-x86.zip into the C:\PHP folder.
-a.Install Visual C++ Redistributable:
+
+    a.Install Visual C++ Redistributable:
 
 From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install the required libraries for PHP.
 
 Step 6: Install MySQL:
 
 1. Install MySQL
+
     a.From the osTicket-Installation-Files folder, run the MySQL installer mysql-5.5.62-win32.msi.
    
     b.Choose Typical Setup and then click Launch Configuration Wizard after installation.

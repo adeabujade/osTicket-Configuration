@@ -17,6 +17,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 1. Create an Azure Virtual Machine
+
 2. In the Virtual Machine download and install osTicket
 
 
@@ -61,26 +62,163 @@ The Resource Group should look like this after you configure the Virtual Machine
    ![image](https://github.com/user-attachments/assets/3d082352-ae9b-4912-b89f-e62bac0e66e2)
 
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<h2>2.osTicket Installation</h2>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Step 1: Download and Prepare osTicket Installation Files
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+1.Download osTicket Installation Files:
+
+a.Within the osticket-vm, download the osTicket-Installation-Files.zip and unzip it to your desktop. The folder will be named osTicket-Installation-Files.
+
+Step 2: Install IIS with CGI
+
+1.Enable IIS and CGI:
+
+a.Open Server Manager and go to Manage > Add Roles and Features.
+
+b.In the wizard, under Web Server (IIS) > Web Server > Application Development, check the CGI box to enable CGI.
+
+Step 3: Install PHP Manager for IIS
+
+1.Install PHP Manager for IIS:
+
+a.From the osTicket-Installation-Files folder, run the installer PHPManagerForIIS_V1.5.0.msi.
+
+Step 4: Install Rewrite Module
+
+1.Install the URL Rewrite Module:
+
+a.From the osTicket-Installation-Files folder, install the rewrite_amd64_en-US.msi module.
+
+Step 5: Set Up PHP
+
+1.Create PHP Directory:
+
+a.Create a new directory on the C: drive: C:\PHP.
+
+2.Install PHP:
+
+3.From the osTicket-Installation-Files folder, unzip php-7.3.8-nts-Win32-VC15-x86.zip into the C:\PHP folder.
+a.Install Visual C++ Redistributable:
+
+From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install the required libraries for PHP.
+
+Step 6: Install MySQL:
+
+1. Install MySQL
+    a.From the osTicket-Installation-Files folder, run the MySQL installer mysql-5.5.62-win32.msi.
+   
+    b.Choose Typical Setup and then click Launch Configuration Wizard after installation.
+   
+    c.In the wizard, select Standard Configuration and set the credentials:
+        -Username: root
+        -Password: root
+
+Step 7: Register PHP in IIS
+
+1.Open IIS Manager as Administrator.
+
+2.Register PHP:
+
+    a.In PHP Manager for IIS, register PHP by browsing to C:\PHP\php-cgi.exe.
+    
+3.Reload IIS:
+
+    a.Open IIS Manager, stop the server, and then restart it.
+
+Step 8: Install osTicket
+
+1.Extract osTicket Files:
+
+    a.From the osTicket-Installation-Files folder, unzip osTicket-v1.15.8.zip.
+
+    b.Copy the upload folder into C:\inetpub\wwwroot.
+
+2.Rename the Folder:
+
+    a.Inside C:\inetpub\wwwroot, rename the upload folder to osTicket.
+
+3.Reload IIS:
+
+    a.Open IIS Manager, stop the server, and then start it again.
+
+Browse osTicket Site:
+
+    a.In IIS Manager, go to Sites > Default > osTicket and click *Browse :80 to test access.
+
+Step 9: Enable PHP Extensions
+
+1.Enable PHP Extensions:
+
+    a.Go back to IIS Manager, then to Sites > Default > osTicket.
+
+    b.Double-click PHP Manager.
+
+    c.Click Enable or disable an extension and enable the following extensions:
+
+        -php_imap.dll
+    
+        -php_intl.dll
+    
+        -php_opcache.dll
+    
+2. Refresh osTicket:
+
+    a.Refresh the osTicket site in your browser and check the changes.
+
+Step 10: Configure osTicket
+
+1. Rename ost-config.php:
+
+    -From C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php, rename it to ost-config.php.
+
+2 .Set Permissions for ost-config.php:
+
+    -Right-click ost-config.php, select Properties > Security.
+    
+    -Click Disable inheritance and then Remove All.
+    
+    -Add Everyone with Full Control.
+
+Step 11. Finalize osTicket Setup
+
+1.Continue osTicket Setup in the Browser:
+
+    a. Open the osTicket setup page and enter the following details:
+    
+        -Helpdesk Name: Name your helpdesk.
+        
+        -Default Email: Set an email address to receive tickets.
+        
+2. Install HeidiSQL:
+    a.From the osTicket-Installation-Files folder, install HeidiSQL.
+   
+3. Create MySQL Database:
+
+    a.Open HeidiSQL and create a new session with the following:
+   
+        -Username: root
+   
+        -Password: root
+   
+    b.Connect to the session and create a database named osTicket.
+   
+4. Complete osTicket Setup:
+
+    a.In the browser setup:
+
+        -MySQL Database: osTicket
+
+        -MySQL Username: root
+
+        -MySQL Password: root
+
+Click Install Now to finish the installation.
+
+Step 12. Verify Installation
+
+    1. Browse to Login Page: After a successful installation, go to your helpdesk login page: http://localhost/osTicket/scp/login.php
+    
+    2.End User osTicket URL: The end-user portal can be accessed at: http://localhost/osTicket/
+
+

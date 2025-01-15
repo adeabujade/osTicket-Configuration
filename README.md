@@ -90,7 +90,7 @@ The Resource Group should look like this after you configure the Virtual Machine
 
     If it's done correctly, you can go to Microsoft Edge and go to the url 127.0.0.1 The page should look like this.
 
-    ![image](https://github.com/user-attachments/assets/cd166289-4d93-45c6-9e4e-675f3379f975)
+![image](https://github.com/user-attachments/assets/cd166289-4d93-45c6-9e4e-675f3379f975)
 
     
 

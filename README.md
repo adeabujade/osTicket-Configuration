@@ -69,15 +69,31 @@ The Resource Group should look like this after you configure the Virtual Machine
 
 **1.Download osTicket Installation Files:**
 
-    a.Within the osticket-vm, download the osTicket-Installation-Files.zip and unzip it to your desktop. The folder will be named osTicket-Installation-Files.
+    a.Within the osticket-vm, download the [osTicket-Installation-Files.zip](url). The folder will be named osTicket-Installation-Files.
+    
+    b.Drag the file onto the desktop right click and press extract all
+
+![image](https://github.com/user-attachments/assets/cd9ac450-c64a-49de-9aff-06adb6657d87)
+
 
 **Step 2: Install IIS with CGI**
 
 **1.Enable IIS and CGI:**
 
-    a.Open Server Manager and go to Manage > Add Roles and Features.
+    a.Open Control Panel > Turn Windows features on or off
 
-    b.In the wizard, under Web Server (IIS) > Web Server > Application Development, check the CGI box to enable CGI.
+    b.Enable Internet Information services
+
+    C. Enable CGI
+    
+        -Internet Information Services > World wide Web Services > Application Development Features 
+
+    If it's done correctly, you can go to Microsoft Edge and go to the url 127.0.0.1 The page should look like this.
+
+    ![image](https://github.com/user-attachments/assets/cd166289-4d93-45c6-9e4e-675f3379f975)
+
+    
+
 
 **Step 3: Install PHP Manager for IIS**
 

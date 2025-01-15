@@ -101,25 +101,39 @@ The Resource Group should look like this after you configure the Virtual Machine
 
     a.From the osTicket-Installation-Files folder, run the installer PHPManagerForIIS_V1.5.0.msi.
 
+![image](https://github.com/user-attachments/assets/bd3bd579-95c2-40f4-bd49-3b0d76526c4b)
+
+
 **Step 4: Install Rewrite Module**
 
 **1.Install the URL Rewrite Module:**
 
-a.From the osTicket-Installation-Files folder, install the rewrite_amd64_en-US.msi module.
+    a.From the osTicket-Installation-Files folder, install the rewrite_amd64_en-US.msi module.
+    
+![image](https://github.com/user-attachments/assets/628318ff-3e96-4297-bef2-3b5469693c18)
+
 
 **Step 5: Set Up PHP**
 
-**1.Create PHP Directory:**
+**1.Create PHP folder:**
 
-a.Create a new directory on the C: drive: C:\PHP.
+    a.Create a new folder on the C: drive: C:\PHP.
+    
+        -This PC > Window (C:)
+
 
 **2.Install PHP:**
 
-**3.From the osTicket-Installation-Files folder, unzip php-7.3.8-nts-Win32-VC15-x86.zip into the C:\PHP folder.**
+    a.From the osTicket-Installation-Files folder, extract php-7.3.8-nts-Win32-VC15-x86.zip into the C:\PHP folder.**
 
-    a.Install Visual C++ Redistributable:
+**3.Install Visual C++ Redistributable:**
 
-From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install the required libraries for PHP.
+    a.From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install the required libraries for PHP.
+
+Installations of PHP and Visual C++ Redistributable files.
+
+![image](https://github.com/user-attachments/assets/f2051523-9d77-4989-9ee6-a5639bb35251)
+
 
 **Step 6: Install MySQL:**
 
@@ -132,10 +146,15 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
     c.In the wizard, select Standard Configuration and set the credentials:
         -Username: root
         -Password: root
+![image](https://github.com/user-attachments/assets/822281d9-6ea7-4690-a584-4daf2173ef5a)
+
 
 **Step 7: Register PHP in IIS**
 
 **1.Open IIS Manager as Administrator.**
+
+![image](https://github.com/user-attachments/assets/b5c25edf-eb4c-4a8f-b254-98ca42256ba1)
+
 
 **2.Register PHP:**
 
@@ -149,13 +168,16 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
 
 **1.Extract osTicket Files:**
 
-    a.From the osTicket-Installation-Files folder, unzip osTicket-v1.15.8.zip.
+    a.From the osTicket-Installation-Files folder, extract osTicket-v1.15.8.zip.
 
     b.Copy the upload folder into C:\inetpub\wwwroot.
 
 **2.Rename the Folder:**
 
     a.Inside C:\inetpub\wwwroot, rename the upload folder to osTicket.
+
+![image](https://github.com/user-attachments/assets/e1fcd35d-0efe-4c19-8b83-183baf6f9cdb)
+
 
 **3.Reload IIS:**
 
@@ -164,6 +186,11 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
 **4.Browse osTicket Site:**
 
     a.In IIS Manager, go to Sites > Default > osTicket and click *Browse :80 to test access.
+
+![image](https://github.com/user-attachments/assets/5d9f1535-a7f9-457b-8e17-1294108065ff)
+
+
+
 
 **Step 9: Enable PHP Extensions**
 
@@ -184,6 +211,9 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
 **2. Refresh osTicket:**
 
     a.Refresh the osTicket site in your browser and check the changes.
+
+![image](https://github.com/user-attachments/assets/67381153-6263-4dbe-806c-2d43b4a21b9d)
+
 
 **Step 10: Configure osTicket**
 
@@ -211,6 +241,7 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
         
 **2. Install HeidiSQL:**
     a.From the osTicket-Installation-Files folder, install HeidiSQL.
+
    
 **3. Create MySQL Database:**
 
@@ -221,6 +252,9 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
         -Password: root
    
     b.Connect to the session and create a database named osTicket.
+
+![image](https://github.com/user-attachments/assets/7a08deda-f03b-4564-8751-898c2a07dc60)
+
    
 **4. Complete osTicket Setup:**
 
@@ -232,12 +266,23 @@ From the osTicket-Installation-Files folder, run VC_redist.x86.exe to install th
 
         -MySQL Password: root
 
-**Click Install Now to finish the installation.**
+![image](https://github.com/user-attachments/assets/2bb3f5db-f18b-407a-a95e-2acd3269e87c)
+
 
 **Step 12. Verify Installation**
 
     1. Browse to Login Page: After a successful installation, go to your helpdesk login page: http://localhost/osTicket/scp/login.php
     
     2.End User osTicket URL: The end-user portal can be accessed at: http://localhost/osTicket/
+
+<h2>Helpdesk Login</h2>
+
+![image](https://github.com/user-attachments/assets/06af0569-65fb-41c3-bad5-e2d6c2949e63)
+
+<h2>End user Portal</h2>
+
+![image](https://github.com/user-attachments/assets/b2b87c4e-8f6a-44e1-87c8-cb4a01a8df17)
+
+
 
 

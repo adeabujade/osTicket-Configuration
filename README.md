@@ -52,11 +52,11 @@ The Resource Group should look like this after you configure the Virtual Machine
 
 **3. Accessing the Virtual Machines through Remote** 
 
-   a. Open Remote Desktop through Windows search bar
+    a. Open Remote Desktop through Windows search bar
 
-   b. Go into the Virtual Machine that was just ticket and enter the public ip address
+    b. Go into the Virtual Machine that was just ticket and enter the public ip address
 
-   c. Enter the Username and password for the VM
+    c. Enter the Username and password for the VM
 
    ![image](https://github.com/user-attachments/assets/f90430f9-6e33-49cf-a695-b184b745f498)
 
